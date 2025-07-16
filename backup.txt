@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="index,follow">
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #e8f0fe;
+      }
+
+      #dente {
+        padding: 30px;
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        width: 300px;
+        text-align: center;
+      }
+
+      select {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #bbb;
+        width: 100%;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      #resultado {
+        margin-top: 20px;
+        font-size: 16px;
+        color: #333;
+        text-align: center;
+        max-width: 600px;
+      }
+      #ads {
+        position: fixed;
+        bottom: 20px;   /* Distância do fundo da tela */
+        right: 20px;    /* Distância da lateral direita */
+        width: 300px;
+        padding: 15px;
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        z-index: 1000;
+      }
+
+    </style>
+  </head>
+  <body>
+  <!--------------------entradadedados-->
+    <form id="dente" onsubmit="enviar(event)">
+      <select id="selecionado">
+        <option value="">Selecione uma opção</option>
+        <option value="carie">Como descobrir a cárie</option>
+        <option value="gengivite">Como identificar a gengivite!</option>
+        <option value="remover">Como remover um dente</option>
+        <option value="halito">Cheiro ruim na boca como resolver</option>
+        <option value="postico">Como comprar dente postiço</option>
+      </select>
+      <button type="submit">Enviado</button>
+    </form>
+    <!--------------------entradadedados-->
+    
+    <div id="resultado"></div>
+    <!---------------------------resultado-->
+     <!-----------------------------propaganda-->
+   <div id="ads">
+    <a href="https://victorxx.github.io/redirecionae00/" id="novo">CONFERIR A OPORTUNIDADE</a>
+   </div>
+   <!-----------------------------propaganda-->
+    <script>
+      function enviar(event) {
+        event.preventDefault();
+        var selecionado = document.getElementById('selecionado').value;
+
+        if (!selecionado) {
+          alert('Preencha por favor para continuar');
+          return;
+        }
+
+        switch (selecionado) {
+          case 'postico':
+            document.getElementById('resultado').innerHTML=`
+             <strong>Onde Comprar:</strong><br><br>
+              <ul style="text-align: left; padding-left: 20px;">
+                <strong><li>Lojas de produtos odontológicos:
+                Essas lojas geralmente oferecem uma variedade de opções, incluindo dentes postiços para diferentes necessidades. 
+                Farmácias:<br><br>
+                Algumas farmácias também vendem dentes postiços, especialmente os modelos mais simples e provisórios. </li></strong>
+            `;
+            return;
+
+          case 'halito':
+            document.getElementById('resultado').innerHTML=`
+             <strong>Causas do mau hálito:</strong><br><br>
+              <ul style="text-align: left; padding-left: 20px;">
+              <strong><li>Higiene bucal inadequada: Acúmulo de bactérias, restos de alimentos e placa bacteriana. 
+                <br><br>
+              Boca seca: A falta de saliva dificulta a limpeza natural da boca, permitindo o crescimento de bactérias. </li></strong>
+            `;
+            return;
+          case 'carie':
+            document.getElementById('resultado').innerHTML = `
+              <strong>A cárie pode ser identificada por:</strong><br><br>
+              <ul style="text-align: left; padding-left: 20px;">
+                <li><strong>Manchas nos dentes:</strong> Inicialmente, aparecem como manchas brancas ou opacas no esmalte, que podem escurecer com o tempo.</li>
+                <li><strong>Sensibilidade:</strong> Ao frio, calor, doces ou alimentos ácidos, principalmente quando a lesão atinge a dentina.</li>
+                <li><strong>Dor de dente:</strong> Pode ser leve e intermitente, tornando-se mais intensa e constante com a progressão.</li>
+                <li><strong>Mau hálito:</strong> Em estágios avançados, causado pela decomposição da matéria orgânica na cavidade.</li>
+              </ul>
+            `;
+            break;
+
+          case'gengivite':
+          document.getElementById('resultado').innerHTML=`
+          <strong>Sintomas detalhados</strong><br><br>
+          <ul style="text-align: left; padding-left: 20px;">
+          <li><strong>Vermelhidão e inchaço:
+          A gengiva saudável tem uma cor rosada e é firme. Na gengivite, ela pode ficar mais avermelhada e inchada.</strong></li> 
+          <li><strong>Mau hálito:
+          O acúmulo de bactérias associado à gengivite pode causar mau hálito persistente.</strong></li>
+          <li><strong>Retração gengival:
+          As gengivas podem começar a se afastar dos dentes, fazendo com que eles pareçam mais longos. </strong></li>
+          <li><strong>Gosto ruim na boca:
+          A inflamação pode alterar o paladar e deixar um gosto desagradável na boca. </strong></li>   
+          `;
+          break;
+
+        case 'remover':
+          document.getElementById('resultado').innerHTML=`
+          <strong>Como um dentista remove um dente:</strong><br><br>
+          <ul style="text-align: left; padding-left: 20px;">
+           <li><strong>1. Planejamento:
+            O dentista avalia a posição e estrutura do dente por meio de radiografias para determinar a melhor técnica de extração. <br><br>
+            2. Anestesia:
+            É aplicada anestesia local para garantir que o procedimento seja indolor. </strong></li> 
+            <strong><li>3. Remoção:<br>
+            O dentista utiliza instrumentos adequados para soltar e remover o dente, podendo ser necessário um corte na gengiva em alguns casos. 
+            4. Cuidados pós-operatórios:
+            O dentista orienta sobre como cuidar da região após a extração, como limpeza, alimentação e uso de medicamentos. </li></strong>           
+          `;
+          return;
+        }
+      }
+    </script>
+
+  </body>
+</html>
